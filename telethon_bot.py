@@ -1,9 +1,12 @@
 from telethon import TelegramClient, events
 import sqlite3
 import datetime
+from dotenv import load_dotenv
+import os
+load_dotenv()  # تحميل محتويات ملف .env
 
-api_id = 27427032
-api_hash = '9f6e342d08612e480ee860f338dba3c6'
+api_id = int(os.getenv("API_ID"))
+api_hash = os.getenv("API_HASH")
 
 def run_bot():
     # نقرأ القنوات من الجدول
